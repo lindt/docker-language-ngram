@@ -6,6 +6,5 @@ ENV NGRAMS_VERSION=20150817
 
 RUN apk --update add curl ca-certificates openssl libarchive-tools \
  && mkdir /ngrams \
- && curl https://languagetool.org/download/ngram-data/ngrams-en-${NGRAMS_VERSION}.zip | bsdtar -xf- -C /ngrams \
- && apk del curl ca-certificates openssl libarchive-tools \
- && rm -rf /var/cache/apk
+ && curl https://languagetool.org/download/ngram-data/ngrams-en-${NGRAMS_VERSION}.zip \
+  | bsdtar -xf- -C /ngrams
